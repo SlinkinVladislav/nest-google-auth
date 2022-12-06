@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    restart: on-failure
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=google_auth
+    volumes:
+      - ./.db/postgresql:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
